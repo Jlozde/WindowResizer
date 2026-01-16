@@ -40,6 +40,8 @@
 
 ## What is WindowResizer?
 
+<img width="1197" height="735" alt="image" src="https://github.com/user-attachments/assets/6795f3ae-a7b5-41aa-9739-b22bb2fe7f1c" />
+
 **WindowResizer** is a lightweight Windows desktop tool (WPF / .NET) that:
 1. **Lists all currently open, visible windows**
 2. Lets you **select a window**
@@ -220,3 +222,4 @@ This project is intentionally small, readable, and easy to fork—so it can stay
 ## License
 
 Add a `LICENSE` file (MIT is a common choice) to define how others can use and redistribute this project.
+
