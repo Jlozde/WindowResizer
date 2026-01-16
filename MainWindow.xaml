@@ -1,0 +1,317 @@
+﻿<Window x:Class="WindowResizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:WindowResizer.ViewModels"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+        Title="WindowResizer"
+        Width="1180" Height="720"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        Background="Transparent">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome CaptionHeight="48"
+                            CornerRadius="18"
+                            GlassFrameThickness="0"
+                            ResizeBorderThickness="6"
+                            UseAeroCaptionButtons="False"/>
+    </shell:WindowChrome.WindowChrome>
+
+    <!-- Outer shell -->
+    <Border CornerRadius="18"
+            Background="{StaticResource SurfBrush}"
+            BorderBrush="{StaticResource StrokeBrush}"
+            BorderThickness="1"
+            Effect="{StaticResource Shadow}">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- TitleBar -->
+            <Grid Grid.Row="0" Background="#0F172A" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="12"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+					<Image Source="app.png"
+					   Width="18" Height="18"
+					   Margin="0,0,10,0"
+					   RenderOptions.BitmapScalingMode="HighQuality"/>
+
+                    <TextBlock Text="WindowResizer" FontWeight="SemiBold" FontSize="15"/>
+                    <TextBlock Text="{DynamicResource L_Title_Subtitle}"
+						Foreground="{StaticResource SubBrush}"
+						Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <!-- App actions -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,6,0">
+					<Button Content="{DynamicResource L_Btn_Refresh}"
+							Command="{Binding RefreshCommand}"
+							Margin="0,0,12,0"
+							Padding="16,10"
+							MinWidth="110"
+							shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+					<Button Content="{DynamicResource L_Btn_Apply}"
+							Command="{Binding ApplyCommand}"
+							Style="{StaticResource PrimaryButton}"
+							Padding="16,10"
+							MinWidth="110"
+							shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+					<Grid Margin="12,0,0,0" VerticalAlignment="Center"
+							shell:WindowChrome.IsHitTestVisibleInChrome="True">
+
+						<ComboBox ItemsSource="{Binding Languages}"
+								  SelectedItem="{Binding SelectedLanguage}"
+								  DisplayMemberPath="Name"
+								  MinWidth="160"
+								  shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+
+						<!-- Placeholder: listede yok, seçilmemişken görünür -->
+						<TextBlock Text="{DynamicResource L_Language}"
+								   Foreground="{StaticResource SubBrush}"
+								   Margin="14,0,34,0"
+								   VerticalAlignment="Center"
+								   IsHitTestVisible="False">
+							<TextBlock.Style>
+								<Style TargetType="TextBlock">
+									<Setter Property="Visibility" Value="Collapsed"/>
+									<Style.Triggers>
+										<DataTrigger Binding="{Binding SelectedLanguage}" Value="{x:Null}">
+											<Setter Property="Visibility" Value="Visible"/>
+										</DataTrigger>
+									</Style.Triggers>
+								</Style>
+							</TextBlock.Style>
+						</TextBlock>
+					</Grid>
+				</StackPanel>
+
+
+                <!-- Window buttons -->
+                <StackPanel Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,12,0">
+					<Button Width="46" Height="32"
+							Click="Min_Click"
+							FontFamily="Segoe MDL2 Assets"
+							Content="&#xE921;"
+							Margin="0,0,8,0"
+							shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+					<Button Width="46" Height="32"
+							Click="Max_Click"
+							FontFamily="Segoe MDL2 Assets"
+							Content="&#xE922;"
+							Margin="0,0,8,0"
+							shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+					<Button Width="46" Height="32"
+							Click="Close_Click"
+							FontFamily="Segoe MDL2 Assets"
+							Content="&#xE8BB;"
+							shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+				</StackPanel>
+
+            </Grid>
+
+            <!-- Content -->
+            <Grid Grid.Row="1" Margin="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="460"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Left panel -->
+                <Border CornerRadius="16" Background="{StaticResource Surf2Brush}" BorderBrush="{StaticResource StrokeBrush}" BorderThickness="1" Padding="14">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="12"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Search (watermark) -->
+                        <Grid>
+                            <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Text="{DynamicResource L_Search_Placeholder}"
+                                       Foreground="{StaticResource SubBrush}"
+                                       Margin="14,0,0,0"
+                                       VerticalAlignment="Center"
+                                       IsHitTestVisible="False">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding SearchText}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding SearchText}" Value="{x:Null}">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+
+                        <ListBox Grid.Row="2"
+							ItemsSource="{Binding WindowsView}"
+							SelectedItem="{Binding SelectedWindow}"
+							Background="Transparent"
+							BorderThickness="0"
+							HorizontalContentAlignment="Stretch"
+							ScrollViewer.VerticalScrollBarVisibility="Auto"
+							ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border CornerRadius="14"
+										BorderBrush="{StaticResource StrokeBrush}"
+										BorderThickness="1"
+										Background="#0B1220"
+										Padding="14,12"
+										Margin="0,10,0,10"
+										MinHeight="74"
+										HorizontalAlignment="Stretch">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Title}" FontWeight="SemiBold" FontSize="13" TextTrimming="CharacterEllipsis"/>
+                                            <Grid Margin="0,6,0,0">
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="*"/>
+													<ColumnDefinition Width="Auto"/>
+												</Grid.ColumnDefinitions>
+
+												<TextBlock Text="{Binding ProcessName}"
+														   Foreground="{StaticResource SubBrush}"
+														   TextTrimming="CharacterEllipsis"
+														   Margin="0,0,10,0"/>
+
+												<TextBlock Grid.Column="1"
+														   Text="{Binding HwndHex}"
+														   Foreground="{StaticResource SubBrush}"/>
+											</Grid>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </Border>
+
+                <!-- Right panel -->
+                <Border Grid.Column="2" CornerRadius="16" Background="{StaticResource Surf2Brush}" BorderBrush="{StaticResource StrokeBrush}" BorderThickness="1" Padding="16">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="14"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="14"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="14"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border CornerRadius="14" Background="#0B1220" BorderBrush="{StaticResource StrokeBrush}" BorderThickness="1" Padding="14">
+                            <StackPanel>
+                                <TextBlock Text="{DynamicResource L_SelectedWindow_Header}" FontWeight="SemiBold" FontSize="14"/>
+                                <TextBlock Text="{Binding SelectedWindowTitle}" Foreground="{StaticResource SubBrush}" Margin="0,8,0,0" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding SelectedWindowSizeText}" Foreground="{StaticResource SubBrush}" Margin="0,6,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Row="2" CornerRadius="14" Background="#0B1220" BorderBrush="{StaticResource StrokeBrush}" BorderThickness="1" Padding="14">
+                            <StackPanel>
+                                <TextBlock Text="{DynamicResource L_QuickResolutions_Title}" FontWeight="SemiBold"/>
+                                <ItemsControl ItemsSource="{Binding QuickResolutions}" Margin="0,10,0,0">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Button Content="{Binding Display}"
+                                                    Margin="0,0,10,10"
+                                                    Command="{Binding DataContext.SelectResolutionCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                    CommandParameter="{Binding}"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Row="4" CornerRadius="14" Background="#0B1220" BorderBrush="{StaticResource StrokeBrush}" BorderThickness="1" Padding="14">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="12"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource L_SelectResolution_Title}" FontWeight="SemiBold"/>
+                                    <ComboBox ItemsSource="{Binding AllResolutions}"
+                                              SelectedItem="{Binding SelectedResolution}"
+                                              DisplayMemberPath="Display"
+                                              Margin="0,10,0,0"/>
+                                    <CheckBox Content="{DynamicResource L_KeepPosition}"
+                                              IsChecked="{Binding KeepPosition}"
+                                              Margin="0,10,0,0"/>
+                                </StackPanel>
+
+                                <Button Grid.Column="2"
+                                        Content="{DynamicResource L_RemoveSelected}"
+                                        Command="{Binding RemoveCustomResolutionCommand}"
+                                        VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Row="6" CornerRadius="14" Background="#0B1220" BorderBrush="{StaticResource StrokeBrush}" BorderThickness="1" Padding="14">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="12"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="12"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource L_Width}" FontWeight="SemiBold"/>
+                                    <TextBox Text="{Binding CustomWidth}" Margin="0,10,0,0"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource L_Height}" FontWeight="SemiBold"/>
+                                    <TextBox Text="{Binding CustomHeight}" Margin="0,10,0,0"/>
+                                </StackPanel>
+
+                                <Button Grid.Column="4"
+                                        Content="{DynamicResource L_Add}"
+                                        Command="{Binding AddCustomResolutionCommand}"
+                                        Style="{StaticResource PrimaryButton}"
+                                        VerticalAlignment="Bottom"/>
+                            </Grid>
+                        </Border>
+
+                        <TextBlock Grid.Row="7"
+                                   Text="{Binding StatusText}"
+                                   Foreground="{StaticResource SubBrush}"
+                                   Margin="6,12,6,0"
+                                   TextWrapping="Wrap"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

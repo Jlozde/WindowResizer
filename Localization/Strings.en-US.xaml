@@ -1,0 +1,31 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:String x:Key="L_Language">Language</sys:String>
+  <sys:String x:Key="L_Title_Subtitle">Fix Window Size</sys:String>
+  <sys:String x:Key="L_Btn_Refresh">Refresh</sys:String>
+  <sys:String x:Key="L_Btn_Apply">Apply</sys:String>
+
+  <sys:String x:Key="L_Search_Placeholder">Search: title / process / handle</sys:String>
+
+  <sys:String x:Key="L_SelectedWindow_Header">Selected Window</sys:String>
+  <sys:String x:Key="L_CurrentSize_Format">Current size: {0} × {1}</sys:String>
+
+  <sys:String x:Key="L_QuickResolutions_Title">Quick resolutions</sys:String>
+
+  <sys:String x:Key="L_SelectResolution_Title">Select resolution</sys:String>
+  <sys:String x:Key="L_KeepPosition">Keep position (only resize)</sys:String>
+  <sys:String x:Key="L_RemoveSelected">Remove selected</sys:String>
+
+  <sys:String x:Key="L_Width">Width</sys:String>
+  <sys:String x:Key="L_Height">Height</sys:String>
+  <sys:String x:Key="L_Add">Add</sys:String>
+
+  <sys:String x:Key="L_Status_WindowCount">Windows: {0}.</sys:String>
+  <sys:String x:Key="L_Status_Applied">Applied: {0} → {1}</sys:String>
+  <sys:String x:Key="L_Status_ErrorSetWindowPos">ERROR: SetWindowPos failed. Some windows may block resizing.</sys:String>
+  <sys:String x:Key="L_Status_CustomAdded">Custom added: {0}</sys:String>
+  <sys:String x:Key="L_Status_CustomInvalidNumber">Custom values must be numbers.</sys:String>
+  <sys:String x:Key="L_Status_CustomInvalidRange">Unreasonable range (recommended 200–10000 px).</sys:String>
+  <sys:String x:Key="L_Status_CustomDeleted">Deleted: {0}</sys:String>
+</ResourceDictionary>

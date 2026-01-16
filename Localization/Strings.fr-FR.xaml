@@ -1,0 +1,31 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:String x:Key="L_Language">Langue</sys:String>
+  <sys:String x:Key="L_Title_Subtitle">Fixer la taille de la fenêtre</sys:String>
+  <sys:String x:Key="L_Btn_Refresh">Actualiser</sys:String>
+  <sys:String x:Key="L_Btn_Apply">Appliquer</sys:String>
+
+  <sys:String x:Key="L_Search_Placeholder">Rechercher : titre / processus / handle</sys:String>
+
+  <sys:String x:Key="L_SelectedWindow_Header">Fenêtre sélectionnée</sys:String>
+  <sys:String x:Key="L_CurrentSize_Format">Taille actuelle : {0} × {1}</sys:String>
+
+  <sys:String x:Key="L_QuickResolutions_Title">Résolutions rapides</sys:String>
+
+  <sys:String x:Key="L_SelectResolution_Title">Choisir une résolution</sys:String>
+  <sys:String x:Key="L_KeepPosition">Conserver la position (redimensionner uniquement)</sys:String>
+  <sys:String x:Key="L_RemoveSelected">Supprimer la sélection</sys:String>
+
+  <sys:String x:Key="L_Width">Largeur</sys:String>
+  <sys:String x:Key="L_Height">Hauteur</sys:String>
+  <sys:String x:Key="L_Add">Ajouter</sys:String>
+
+  <sys:String x:Key="L_Status_WindowCount">Fenêtres : {0}.</sys:String>
+  <sys:String x:Key="L_Status_Applied">Appliqué : {0} → {1}</sys:String>
+  <sys:String x:Key="L_Status_ErrorSetWindowPos">ERREUR : SetWindowPos a échoué. Certaines fenêtres peuvent bloquer le redimensionnement.</sys:String>
+  <sys:String x:Key="L_Status_CustomAdded">Personnalisé ajouté : {0}</sys:String>
+  <sys:String x:Key="L_Status_CustomInvalidNumber">Les valeurs doivent être numériques.</sys:String>
+  <sys:String x:Key="L_Status_CustomInvalidRange">Plage incohérente (recommandé 200–10000 px).</sys:String>
+  <sys:String x:Key="L_Status_CustomDeleted">Supprimé : {0}</sys:String>
+</ResourceDictionary>

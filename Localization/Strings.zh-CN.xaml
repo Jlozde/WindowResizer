@@ -1,0 +1,31 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:String x:Key="L_Language">语言</sys:String>
+  <sys:String x:Key="L_Title_Subtitle">固定窗口大小</sys:String>
+  <sys:String x:Key="L_Btn_Refresh">刷新</sys:String>
+  <sys:String x:Key="L_Btn_Apply">应用</sys:String>
+
+  <sys:String x:Key="L_Search_Placeholder">搜索：标题 / 进程 / 句柄</sys:String>
+
+  <sys:String x:Key="L_SelectedWindow_Header">已选窗口</sys:String>
+  <sys:String x:Key="L_CurrentSize_Format">当前大小：{0} × {1}</sys:String>
+
+  <sys:String x:Key="L_QuickResolutions_Title">常用分辨率</sys:String>
+
+  <sys:String x:Key="L_SelectResolution_Title">选择分辨率</sys:String>
+  <sys:String x:Key="L_KeepPosition">保持位置（仅调整大小）</sys:String>
+  <sys:String x:Key="L_RemoveSelected">删除所选</sys:String>
+
+  <sys:String x:Key="L_Width">宽度</sys:String>
+  <sys:String x:Key="L_Height">高度</sys:String>
+  <sys:String x:Key="L_Add">添加</sys:String>
+
+  <sys:String x:Key="L_Status_WindowCount">窗口数量：{0}。</sys:String>
+  <sys:String x:Key="L_Status_Applied">已应用：{0} → {1}</sys:String>
+  <sys:String x:Key="L_Status_ErrorSetWindowPos">错误：SetWindowPos 失败。某些窗口可能禁止调整大小。</sys:String>
+  <sys:String x:Key="L_Status_CustomAdded">已添加自定义：{0}</sys:String>
+  <sys:String x:Key="L_Status_CustomInvalidNumber">自定义值必须是数字。</sys:String>
+  <sys:String x:Key="L_Status_CustomInvalidRange">范围不合理（建议 200–10000 px）。</sys:String>
+  <sys:String x:Key="L_Status_CustomDeleted">已删除：{0}</sys:String>
+</ResourceDictionary>

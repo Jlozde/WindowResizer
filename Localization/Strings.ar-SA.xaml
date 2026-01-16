@@ -1,0 +1,31 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:String x:Key="L_Language">اللغة</sys:String>
+  <sys:String x:Key="L_Title_Subtitle">تثبيت حجم النافذة</sys:String>
+  <sys:String x:Key="L_Btn_Refresh">تحديث</sys:String>
+  <sys:String x:Key="L_Btn_Apply">تطبيق</sys:String>
+
+  <sys:String x:Key="L_Search_Placeholder">بحث: العنوان / العملية / المعرّف</sys:String>
+
+  <sys:String x:Key="L_SelectedWindow_Header">النافذة المحددة</sys:String>
+  <sys:String x:Key="L_CurrentSize_Format">الحجم الحالي: {0} × {1}</sys:String>
+
+  <sys:String x:Key="L_QuickResolutions_Title">دقات سريعة</sys:String>
+
+  <sys:String x:Key="L_SelectResolution_Title">اختر الدقة</sys:String>
+  <sys:String x:Key="L_KeepPosition">الحفاظ على الموضع (تغيير الحجم فقط)</sys:String>
+  <sys:String x:Key="L_RemoveSelected">حذف المحدد</sys:String>
+
+  <sys:String x:Key="L_Width">العرض</sys:String>
+  <sys:String x:Key="L_Height">الارتفاع</sys:String>
+  <sys:String x:Key="L_Add">إضافة</sys:String>
+
+  <sys:String x:Key="L_Status_WindowCount">عدد النوافذ: {0}.</sys:String>
+  <sys:String x:Key="L_Status_Applied">تم التطبيق: {0} → {1}</sys:String>
+  <sys:String x:Key="L_Status_ErrorSetWindowPos">خطأ: فشل SetWindowPos. قد تمنع بعض النوافذ تغيير الحجم.</sys:String>
+  <sys:String x:Key="L_Status_CustomAdded">تمت إضافة مخصص: {0}</sys:String>
+  <sys:String x:Key="L_Status_CustomInvalidNumber">يجب أن تكون القيم أرقامًا.</sys:String>
+  <sys:String x:Key="L_Status_CustomInvalidRange">النطاق غير منطقي (الموصى به 200–10000 بكسل).</sys:String>
+  <sys:String x:Key="L_Status_CustomDeleted">تم الحذف: {0}</sys:String>
+</ResourceDictionary>
