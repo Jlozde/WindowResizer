@@ -1,11 +1,11 @@
-# WindowResizer (WPF) — Sunumlar ve Ekran Paylaşımı için Sabit Pencere Boyutu
+# WindowResizer (WPF) — Sunumlar ve Ekran Paylaşımı için Sabit Pencere Boyutlandırıcı
 
 <p align="center">
   <img src="app.png" width="96" alt="WindowResizer ikonu" />
 </p>
 
 <p align="center">
-  <b>Açık pencereleri listele • Birini seç • Tutarlı pencere boyutu uygula (örn. 1280×720 / 1920×1080) • Ekran paylaşımı & demolar için ideal</b>
+  <b>Açık pencereleri listele • Birini seç • İstediğin pencere boyutunu uygula (örn. 1280×720 / 1920×1080) • Ekran paylaşımı & demolar için idealdir.</b>
 </p>
 
 <p align="center">
@@ -35,7 +35,7 @@
 - 🇪🇸 İspanyolca — [`README.es-ES.md`](README.es-ES.md)
 - 🇹🇷 Türkçe (bu dosya)
 
-> Çevirileri geliştirmek ister misin? PR’lar memnuniyetle kabul edilir. [Yerelleştirme](#localization) bölümüne bak.
+> Çevirileri geliştirmek ister misin? PR’lar memnuniyetle kabul edilir. [Yerelleştirme](#localization) bölümüne bakabilirsin.
 
 ---
 
@@ -47,7 +47,7 @@
 
 1. **Açık ve görünür tüm pencereleri listeler**
 2. Bir pencere **seçmene** izin verir
-3. Popüler hazır ayarlar (720p / 1080p / 1440p vb.) veya özel bir boyut ile **hedef boyutu** (genişlik × yükseklik) uygular
+3. Popüler hazır ayarlar (720p / 1080p / 1440p vb.) veya özel seçimine bağlı bir boyut ile **hedef boyutu** (genişlik × yükseklik) uygular
 
 Şu durumlarda özellikle faydalıdır:
 
@@ -59,6 +59,7 @@
 …çünkü tutarlı pencere boyutu her şeyi daha düzenli gösterir:
 
 - paylaştığın pencere OBS/Meet/Teams/Zoom’da daha iyi oturur
+- sen geniş ekran kullanıyorken izleyiciler 1080p olabilir ve ekranlarına tam oturan çözünürlüğü kullanabilirsin
 - slayt + paylaşılan uygulama düzeni sabit kalır
 - yakalama bölgelerini sürekli yeniden ayarlamazsın
 
