@@ -16,7 +16,8 @@
   <a href="#build--release">构建与发布</a> •
   <a href="#localization">本地化</a> •
   <a href="#limitations--notes">限制与说明</a> •
-  <a href="#contributing">贡献</a>
+  <a href="#contributing">贡献</a> •
+  <a href="https://github.com/Jlozde/WindowResizer/releases">Releases</a>
 </p>
 
 ---
