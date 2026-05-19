@@ -253,4 +253,4 @@ Ce projet est volontairement petit, lisible, et facile à forker — pour rester
 
 ## Licence
 
-Ajoutez un fichier `LICENSE` (MIT est un choix courant) pour définir comment d’autres peuvent utiliser et redistribuer ce projet.
+Consultez le fichier `LICENSE` pour plus de détails.
