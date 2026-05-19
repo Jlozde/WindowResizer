@@ -16,7 +16,7 @@
   <a href="#build--release">Build & Release</a> •
   <a href="#localization">Yerelleştirme</a> •
   <a href="#limitations--notes">Sınırlamalar & Notlar</a> •
-  <a href="#contributing">Katkı</a>
+  <a href="#contributing">Katkı</a> •
   <a href="https://github.com/Jlozde/WindowResizer/releases">Releases</a>
 </p>
 
