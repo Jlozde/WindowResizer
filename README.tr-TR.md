@@ -254,4 +254,4 @@ Bu proje özellikle küçük, okunabilir ve kolay fork’lanabilir tutuldu — p
 
 ## Lisans
 
-Başkalarının bu projeyi nasıl kullanıp yeniden dağıtabileceğini tanımlamak için bir `LICENSE` dosyası ekleyin (MIT yaygın bir seçimdir).
+Detay için `LICENSE` dosyasını okuyun.
