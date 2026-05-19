@@ -16,7 +16,8 @@
   <a href="#build--release">빌드 & 릴리스</a> •
   <a href="#localization">현지화</a> •
   <a href="#limitations--notes">제한 사항 & 참고</a> •
-  <a href="#contributing">기여</a>
+  <a href="#contributing">기여</a> •
+  <a href="https://github.com/Jlozde/WindowResizer/releases">Releases</a>
 </p>
 
 ---
