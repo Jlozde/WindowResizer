@@ -16,7 +16,8 @@
   <a href="#build--release">Build & Release</a> •
   <a href="#localization">Localização</a> •
   <a href="#limitations--notes">Limitações & notas</a> •
-  <a href="#contributing">Contribuindo</a>
+  <a href="#contributing">Contribuindo</a> •
+  <a href="https://github.com/Jlozde/WindowResizer/releases">Releases</a>
 </p>
 
 ---
