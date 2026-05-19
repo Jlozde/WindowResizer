@@ -253,4 +253,4 @@ Este projeto é intencionalmente pequeno, legível e fácil de fazer fork — pa
 
 ## Licença
 
-Adicione um arquivo `LICENSE` (MIT é uma escolha comum) para definir como outros podem usar e redistribuir este projeto.
+Consulte o ficheiro `LICENSE` para obter detalhes.
