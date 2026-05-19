@@ -253,4 +253,4 @@ Dieses Projekt ist bewusst klein, gut lesbar und leicht zu forken — damit es f
 
 ## Lizenz
 
-Füge eine `LICENSE`-Datei hinzu (MIT ist eine gängige Wahl), um festzulegen, wie andere dieses Projekt nutzen und weiterverbreiten dürfen.
+Einzelheiten finden Sie in der Datei `LICENSE`.
