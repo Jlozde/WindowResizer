@@ -222,5 +222,4 @@ This project is intentionally small, readable, and easy to fork—so it can stay
 
 ## License
 
-Add a `LICENSE` file (MIT is a common choice) to define how others can use and redistribute this project.
-
+See the `LICENSE` file for details.
